@@ -3,18 +3,23 @@
 console.log('running');
 
 //JSX - JavaScript XML
+var app = {
+    title: 'Indecision App',
+    subtitle: 'Give up your life'
+};
+
 var template = React.createElement(
     'div',
     null,
     React.createElement(
         'h1',
         null,
-        'My app'
+        app.title
     ),
     React.createElement(
         'p',
         null,
-        'This is the new content'
+        app.subtitle
     ),
     React.createElement(
         'ol',
@@ -32,26 +37,33 @@ var template = React.createElement(
     )
 );
 
+var user = {
+    name: 'Nemo',
+    age: 32,
+    location: 'Houston, TX'
+};
 var templateTwo = React.createElement(
     'div',
     null,
     React.createElement(
         'h1',
         null,
-        'Nemo'
+        user.name + '!'
     ),
     React.createElement(
         'p',
         null,
-        'Age: 30'
+        'Age: ',
+        user.age
     ),
     React.createElement(
         'p',
         null,
-        'Location: Houston, TX'
+        'Location: ',
+        user.location
     )
 );
 
 var appRoot = document.getElementById('app');
 
-ReactDOM.render(templateTwo, appRoot);
+ReactDOM.render(template, appRoot);
