@@ -1,12 +1,13 @@
+'use strict';
+
 console.log('running');
 
 //JSX - JavaScript XML
-// var template = <p id='my_id'>This is JSX from app.js!</p>;
+var template = React.createElement(
+  'p',
+  { id: 'my_id' },
+  'It changed!'
+);
 var appRoot = document.getElementById('app');
 
-var template = React.createElement(
-    'p',
-    { id: 'my_id' },
-    'This is test'
-  );
 ReactDOM.render(template, appRoot);
