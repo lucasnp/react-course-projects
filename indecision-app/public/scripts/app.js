@@ -1,12 +1,15 @@
-'use strict';
+"use strict";
 
-var getFirstName = function getFirstName(fullName) {
-    return fullName.split(' ')[0];
+var multiplers = {
+    numbers: [1, 6],
+    multiplyBy: 5,
+    multiply: function multiply() {
+        var _this = this;
+
+        return this.numbers.map(function (number) {
+            return number * _this.multiplyBy;
+        });
+    }
 };
 
-var getLastName = function getLastName(fullName) {
-    return fullName.split(' ')[1];
-};
-
-console.log(getFirstName('Tai Nguyen'));
-console.log(getLastName('Tai Nguyen'));
+console.log(multiplers.multiply());
