@@ -20,6 +20,11 @@ const onFormSubmit = (e) => {
     render();
 };
 
+const reset = () => {
+    app.options = [];
+    render();
+}
+
 const appRoot = document.getElementById('app');
 
 const render = () => {
@@ -29,6 +34,7 @@ const render = () => {
             {app.subtitle && <p>{app.subtitle}</p>}
             <p>{app.options.length > 0 ? 'Here are your options' : 'No options'}</p>
             <p>{app.options.length}</p>
+            <button onClick={reset}>Reset</button>
             <ol>
                 <li>Item 1</li>
                 <li>Item 2</li>
