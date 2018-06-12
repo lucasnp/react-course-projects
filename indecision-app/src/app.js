@@ -23,7 +23,13 @@ const onFormSubmit = (e) => {
 const reset = () => {
     app.options = [];
     render();
-}
+};
+
+const onDecide = () => {
+    const randomNum = Math.floor(Math.random() * app.options.length);
+    const option = app.options[randomNum];
+    alert(option);
+};
 
 const appRoot = document.getElementById('app');
 
@@ -33,7 +39,7 @@ const render = () => {
             <h1>{app.title}</h1>
             {app.subtitle && <p>{app.subtitle}</p>}
             <p>{app.options.length > 0 ? 'Here are your options' : 'No options'}</p>
-            <p>{app.options.length}</p>
+            <button disabled={app.options.length > 0 ? false : true} onClick={onDecide}>What should i do?</button>
             <button onClick={reset}>Reset</button>
             <ol>
             {
